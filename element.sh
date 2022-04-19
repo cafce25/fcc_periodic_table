@@ -13,7 +13,7 @@ fi
 if [[ -z $ATOMIC_NUMBER ]]
 then
   # lookup element by symbol
-  echo by symbol
+  ATOMIC_NUMBER=$($PSQL "SELECT atomic_number FROM elements WHERE symbol = '$1'")
 fi
 if [[ -z $ATOMIC_NUMBER ]]
 then
