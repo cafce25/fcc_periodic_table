@@ -18,7 +18,7 @@ fi
 if [[ -z $ATOMIC_NUMBER ]]
 then
   # lookup element by name
-  echo by name
+  ATOMIC_NUMBER=$($PSQL "SELECT atomic_number FROM elements WHERE name = '$1'")
 fi
 if [[ -z $ATOMIC_NUMBER ]]
 then
